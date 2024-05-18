@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıp Eşya | Ana Sayfa</title>
+    <link rel="stylesheet" href="anasayfa2.css?v=1.0">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- DESKTOP -->
+        <div class="footer-left">
+            <div class="items">
+                <p>Kayıp eşya</p>
+                <img src="src/pixelcut-export.png">
+
+                <div class="right">
+                    <h1>EŞYANI MI <br> KAYBETTİN?</h1>
+                    <h2>Kayıp eşya web sitesiyle eşyana hızlıca ulaşabilirsin</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <label>Hemen Başlamaya <br> Ne Dersin?</label>
+
+            <div class="buttons">
+                <button class="giris_buton">Giriş</button>
+                <button class="kayit_buton">Kayıt</button>
+            </div>
+
+            <form action="control.php" method="post" class="giris_form">
+                <input type="text" name="kadi" placeholder="Kullanıcı Adınız...">
+                <input type="password" name="sifre" placeholder="Şifreniz...">
+                <button>Gönder</button>
+            </form>
+
+            <form action="kayit.php" method="post" class="kayit_form" style="display: none;">
+                <input type="text" name="" placeholder="TC'niz...">
+                <input type="text" name="ad" placeholder="İsminiz...">
+                <input type="password" name="kadi" placeholder="Kullanıcı Adınız...">
+                <input type="password" name="sifre" placeholder="Şifreniz...">
+                <input type="password" name="" placeholder="Şifreniz Tekrar...">
+                <button>Gönder</button>
+            </form>
+        </div>
+        <!-- DESKTOP END -->
+
+        <!-- MOBİLE -->
+        <div class="mobile">
+            <div class="box">
+                <h1>Eşyanı Mı Kaybettin?</h1>
+                <img src="src/pixelcut-export.png">
+            </div>
+
+            <label>Hemen Başlamaya <br> Ne Dersin?</label>
+            <div class="buttons">
+                <button class="giris_buton">Giriş</button>
+                <button class="kayit_buton">Kayıt</button>
+            </div>
+
+            <form action="control.php" method="post" class="giris_form">
+                <input type="text" name="kadi" placeholder="Kullanıcı Adınız...">
+                <input type="password" name="sifre" placeholder="Şifreniz...">
+                <button>Gönder</button>
+            </form>
+
+            <form action="kayit.php" method="post" class="kayit_form" style="display: none;">
+                <input type="text" name="" placeholder="TC'niz...">
+                <input type="text" name="ad" placeholder="İsminiz...">
+                <input type="password" name="kadi" placeholder="Kullanıcı Adınız...">
+                <input type="password" name="sifre" placeholder="Şifreniz...">
+                <input type="password" name="" placeholder="Şifreniz Tekrar...">
+                <button>Gönder</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        var girisButonlar = document.querySelectorAll(".giris_buton");
+        var kayitButonlar = document.querySelectorAll(".kayit_buton");
+        var gformlar = document.querySelectorAll(".giris_form");
+        var kayitFormlar = document.querySelectorAll(".kayit_form");
+
+        girisButonlar.forEach(function (girisButon, index) {
+            girisButon.addEventListener("click", function () {
+                gformlar[index].style.display = "flex";
+                kayitFormlar[index].style.display = "none";
+            });
+        });
+
+        kayitButonlar.forEach(function (kayitButon, index) {
+            kayitButon.addEventListener("click", function () {
+                kayitFormlar[index].style.display = "flex";
+                gformlar[index].style.display = "none";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
